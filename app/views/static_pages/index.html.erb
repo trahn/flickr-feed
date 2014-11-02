@@ -1,0 +1,12 @@
+<h1>Flickr Feed</h1>
+
+<%= form_tag '/' do %>
+  Flickr-ID: <%= text_field_tag :flickr_id %></br>
+
+  <%= submit_tag "Get Feed" %>
+
+<% end %>
+
+<% if @flickr_id %>
+  <%= render_flickr_sidebar_widget(@flickr_id) %>
+<% end %>
